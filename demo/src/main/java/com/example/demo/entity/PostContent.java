@@ -16,7 +16,7 @@ public class PostContent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 5000)
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -35,5 +35,9 @@ public class PostContent {
         this.user = user;
         this.createdAt = createdAt;
         this.post = post;
+    }
+
+    public void updateContent(String content) {
+        this.content = content;
     }
 }

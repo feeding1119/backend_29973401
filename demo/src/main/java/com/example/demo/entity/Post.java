@@ -35,6 +35,15 @@ public class Post {
         this.user = user;
         this.hasFile = hasFile;
         this.createdAt = createdAt;
-        this.views = 0;  // 기본 조회수는 0으로 설정
+        this.views = 0;
     }
+
+    public void incrementViews() {
+        this.views += 1;
+    }
+
+    public void updateTitle(String title) {
+        this.title = title;
+    }
+
 }
